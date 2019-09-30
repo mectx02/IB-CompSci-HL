@@ -1,0 +1,125 @@
+package HL_1.Section_06.MethodPractice;
+
+/**
+ *
+ * @author 660741
+ */
+import java.util.*;
+
+public class MethodPractice1
+{
+    private Scanner keyboard = new Scanner(System.in);
+
+    /** This method returns a string using the following
+     *  conditions: if weight is less than 100 it returns
+     *  "small", if weight is greater than or equal to 100
+     *  and less than or equal to 200 it returns "medium",
+     *  if weight is greater than 200 it returns "large".
+     *  @return the string "small", "medium", or "large"
+     *  @param weight number representing a weight
+     */
+    public String method1(int weight)
+    {
+        if (weight < 100)
+            return "small";
+        
+        if (weight >= 100 && weight <= 200)
+            return "medium";
+        
+        if (weight > 200)
+            return "large";
+        
+        return "";
+    }
+
+    /** This method prints phrase 10 times.
+     *  @ param phrase the string to be printed
+     */
+    public void method2(String phrase)
+    {
+        for (int i = 0; i < 10; i++) 
+            System.out.println(phrase);
+    }
+
+    /** This method allows a user to enter an unknown
+     *  number of integers from the keyboard. When the
+     *  sentinel value -1 is entered the method returns
+     *  the count of the number of integers entered.
+     *  @return count of the number of integers entered
+     */
+    public int method3()
+    {
+        int end = -1;
+        int num = 0;
+        while (num != -1)
+        {
+            num = keyboard.nextInt();
+            end ++;
+        }
+        return end;
+    }
+
+    /** This method returns a string containing the
+     *  first and last letter of str concatenated
+     *  together.
+     *  @return a string containing two letters
+     *  @param str the string from which to extract
+     *     the first and last letters
+     */
+    public String method4(String str)
+    {
+        String first = str.substring(0,1);
+        String last = str.substring(str.length() - 1);
+        
+        return first + last;
+    }
+
+    /** This method returns a random number.
+     *  @return a random number in range of 0 to upper-1
+     *  @param upper the upper limit of the random number
+     */
+    public int method5(int upper)
+    {
+        int random = (int)(Math.random() * upper);
+        return random;
+    }
+
+    public static void main(String[] args)
+    {
+        MethodPractice1 app = new MethodPractice1();
+
+        System.out.println("******************");
+        System.out.println("   Test Method1");
+        System.out.println("******************");
+
+        System.out.println("Weight is " + app.method1(150));
+        System.out.println("Weight is " + app.method1(99));
+        System.out.println("Weight is " + app.method1(200));
+        System.out.println("Weight is " + app.method1(300));
+
+        System.out.println("\n\n******************");
+        System.out.println("   Test Method2");
+        System.out.println("******************");
+        app.method2("Computers are fun!");
+
+        System.out.println("\n\n******************");
+        System.out.println("   Test Method3");
+        System.out.println("******************");
+        System.out.println("\nCount = " + app.method3());
+
+        System.out.println("\n\n******************");
+        System.out.println("   Test Method4");
+        System.out.println("******************");
+        System.out.println("String = " + app.method4("red"));
+        System.out.println("String = " + app.method4("green"));
+        System.out.println("String = " + app.method4("blue"));
+
+        System.out.println("\n\n******************");
+        System.out.println("   Test Method5");
+        System.out.println("******************");
+        System.out.println("Random Number = " + app.method5(5));
+        System.out.println("Random Number = " + app.method5(50));
+        System.out.println("Random Number = " + app.method5(500));
+        System.out.println();
+    }
+}  

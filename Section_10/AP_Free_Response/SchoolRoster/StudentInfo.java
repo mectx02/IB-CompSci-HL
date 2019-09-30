@@ -1,0 +1,52 @@
+package HL_1.Section_10.AP_Free_Response.SchoolRoster;
+
+// Topic: ArrayList
+// Reference: AP A 1999 Question 1
+// Difficulty: Easy
+
+public class StudentInfo
+{
+	// instance variables
+	private String name;
+	private int creditHours;
+	private double gradePoints;
+	private double GPA;
+	
+	public StudentInfo(String n, int c, double g)
+	{
+		name = n;
+		creditHours = c;
+		gradePoints = g;
+		GPA = 0;
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public int getCreditHours()
+	{
+		return creditHours;
+	}
+	
+	public double getGradePoints()
+	{
+		return gradePoints;
+	}
+	
+	public double getGPA()
+	{
+		return GPA;
+	}
+	
+	public void setGPA(double gpa)
+	{
+		GPA = gpa;
+	}
+	
+	public String toString()
+	{
+		return name + " " + creditHours + " " + gradePoints + " " + GPA;
+	}
+}
